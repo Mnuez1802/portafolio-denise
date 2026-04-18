@@ -1,0 +1,57 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #b5c8e8; /* azul pastel */
+  --color-secondary: #c9b8e8; /* morado pastel */
+  --color-accent: #E8E4F5;  /* lavanda muy suave */
+  --color-bg: #f8f6ff; /* fondo casi blanco */
+  --color-text: #2c2440; /* texto oscuro */
+
+  --font-title: 'Great Vibes', cursive;
+  --font-subtitle: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1 {
+  font-family: var(--font-title);
+}
+
+h2, h3 {
+  font-family: var(--font-subtitle);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;  /* ← evita scroll horizontal */
+  width: 100%;
+}

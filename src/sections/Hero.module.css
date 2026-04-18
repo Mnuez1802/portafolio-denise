@@ -1,0 +1,21 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-secondary);
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  margin-bottom: 0.5rem;
+}
+
+.heroText {
+  margin-bottom: 0.5rem;
+}

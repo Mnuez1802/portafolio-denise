@@ -1,0 +1,75 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-family: var(--font-title);       /* Great Vibes */
+  font-size: 1.8rem;
+  color: var(--color-text);
+  text-decoration: none;                /* quita el subrayado */
+}
+
+.navLinks {
+  display: flex;                        /* links en fila horizontal */
+  gap: 2rem;                            /* espacio entre cada link */
+  list-style: none;                     /* quita los puntos de la lista */
+}
+
+.navLinks a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;              /* pequeño espacio entre letras */
+}
+
+.navLinks a:hover {
+  color: var(--color-accent);          /* dorado pastel al pasar el mouse */
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    gap: 1rem;
+    z-index: 99;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+}
