@@ -1,5 +1,5 @@
 import whyme from "../data/whyme";
-import styles from "./Whyme.module.css";
+import styles from './WhyMe.module.css'
 import * as Icons from "lucide-react";
 
 function WhyMe() {
