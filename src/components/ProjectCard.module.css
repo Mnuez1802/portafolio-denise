@@ -36,14 +36,21 @@
 
 .projectVideo {
   width: 100%;
-  aspect-ratio: 9/16;
+  aspect-ratio: 4/5;
   overflow: hidden;
   position: relative;
 }
 
+/* Instagram's embed always adds a fixed ~54px header and ~154px footer
+   (likes/comments bar) around the video, regardless of width. Oversize
+   the iframe to fit all of it and shift it up so only the video shows
+   through this box's overflow: hidden crop. */
 .projectVideo iframe {
+  position: absolute;
+  top: -54px;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 208px);
   border: none;
   display: block;
 }
