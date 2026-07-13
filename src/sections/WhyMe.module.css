@@ -1,38 +1,169 @@
 .whyme {
-    padding: 4rem 2rem;
-    background-color: var(--color-accent);
+  padding: 6rem 3rem;
+  background: linear-gradient(180deg, var(--color-section-alt) 0%, var(--color-bg) 100%);
+  position: relative;
+}
+
+.whymeHeader {
+  text-align: center;
+  margin-bottom: 3.5rem;
 }
 
 .whymeTitle {
-    color: var(--color-text);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
+  font-size: 2.8rem;
+  color: var(--color-text);
+  margin-top: 0.4rem;
 }
 
 .whymeGrid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
+/* ── Card ── */
 .whymeCard {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    border-top: 4px solid var(--color-primary);
-    border-left: 4px solid var(--color-primary);
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.2rem 1.6rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  cursor: default;
 }
 
-.whymeIcon {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
+/* Large number watermark in background */
+.whymeCard::before {
+  content: attr(data-num);
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  font-size: 7rem;
+  font-family: var(--font-subtitle);
+  font-weight: 900;
+  color: rgba(201, 184, 232, 0.15);
+  line-height: 1;
+  pointer-events: none;
+  transition: color 0.35s ease;
+}
+
+/* Gradient fill on hover */
+.whymeCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c9b8e8, #9eb8de);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: inherit;
+}
+
+.whymeCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-soft);
+}
+
+.whymeCard:hover::after {
+  opacity: 1;
+}
+
+.whymeCard:hover::before {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* All direct children go above the ::after overlay */
+.whymeCard > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease;
+}
+
+.whymeCard:hover > * {
+  color: #fff;
+}
+
+/* Icon */
+.whymeIconWrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  transition: background 0.35s ease, transform 0.35s ease;
+  position: relative;
+}
+
+/* Pulse ring on hover */
+.whymeIconWrap::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,184,232,0.6);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.whymeCard:hover .whymeIconWrap {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.08);
+}
+
+.whymeCard:hover .whymeIconWrap::before {
+  opacity: 1;
+}
+
+.whymeCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+}
+
+.whymeCardDesc {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  opacity: 0.75;
+  line-height: 1.6;
+  transition: opacity 0.35s ease;
+}
+
+.whymeCard:hover .whymeCardDesc {
+  opacity: 0.9;
+}
+
+.whyme .whymeGrid > *:nth-child(1),
+.whyme .whymeGrid > *:nth-child(2),
+.whyme .whymeGrid > *:nth-child(3),
+.whyme .whymeGrid > *:nth-child(4) {
+  transition-delay: 0.05s;
+}
+
+@media (max-width: 900px) {
+  .whymeGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
+  .whyme {
+    padding: 4rem 1.5rem;
+  }
   .whymeGrid {
     grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whymeGrid {
+    grid-template-columns: 1fr;
   }
 }

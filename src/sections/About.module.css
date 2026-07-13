@@ -1,67 +1,88 @@
 .about {
-  padding: 4rem 2rem;
-  background-color: var(--color-accent);
+  padding: 6rem 3rem;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-section-alt) 100%);
+  position: relative;
+}
+
+.aboutInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.aboutHeader {
+  margin-bottom: 3rem;
+}
+
+.aboutTitle {
+  font-size: 2.8rem;
+  color: var(--color-text);
+  margin-top: 0.4rem;
 }
 
 .aboutContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  text-align: justify;
+  gap: 4rem;
+  align-items: center;
 }
 
-.aboutImage {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;     /* recorta la imagen para llenar el espacio sin distorsionar */
-  object-position: top;  /* muestra la parte superior de la foto */
-  border-radius: 8px;
+.aboutBio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
 }
 
-.aboutTitle {
-  color: var(--color-secondary);
-  margin-bottom: 2rem;
-}
-
-.aboutLink {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.7rem 1.5rem;
-  background-color: var(--color-primary);
+.aboutBio p {
+  font-size: 1.02rem;
+  line-height: 1.8;
   color: var(--color-text);
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
+  opacity: 0.85;
 }
 
-.aboutLink:hover {
-  background-color: var(--color-secondary);
+/* Decorative left border on first paragraph */
+.aboutBio p:first-child {
+  border-left: 3px solid;
+  border-image: linear-gradient(to bottom, #c9b8e8, #b5c8e8) 1;
+  padding-left: 1.2rem;
+  font-style: italic;
+  font-size: 1.08rem;
+  opacity: 0.9;
 }
 
 .aboutVideo {
-  width: 50%;  /* ← cambia de 50% a 80% */
-  border-radius: 8px;
+  border-radius: 20px;
   overflow: hidden;
-  margin: 0 auto 1rem auto;
-}
-.aboutVideo iframe {
-  width: 100%;
-  height: 490px;
-  border: none;
+  box-shadow: var(--shadow-float);
+  aspect-ratio: 9/16;
+  max-height: 540px;
 }
 
-@media (max-width: 768px) {
+.aboutVideo iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 900px) {
   .aboutContent {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .aboutVideo {
-    width: 100%;  /* ← ocupa todo el ancho en móvil */
-    height: 500px;
-  }
-
-  .aboutVideo iframe {
-    height: 500px;
+    max-height: 480px;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+
+  .aboutVideo {
+    width: 100%;
+  }
+}

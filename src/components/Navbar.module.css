@@ -2,35 +2,57 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-primary);
+  padding: 1rem 3rem;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(201, 184, 232, 0.35);
   position: sticky;
   top: 0;
   z-index: 100;
 }
+
 .logo {
-  font-family: var(--font-title);       /* Great Vibes */
-  font-size: 1.8rem;
-  color: var(--color-text);
-  text-decoration: none;                /* quita el subrayado */
+  font-family: var(--font-title);
+  font-size: 2rem;
+  background: linear-gradient(135deg, #7c5cbf, #4a86c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
 }
 
 .navLinks {
-  display: flex;                        /* links en fila horizontal */
-  gap: 2rem;                            /* espacio entre cada link */
-  list-style: none;                     /* quita los puntos de la lista */
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  align-items: center;
 }
 
 .navLinks a {
   color: var(--color-text);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;              /* pequeño espacio entre letras */
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  position: relative;
+  padding-bottom: 3px;
 }
 
-.navLinks a:hover {
-  color: var(--color-accent);          /* dorado pastel al pasar el mouse */
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c9b8e8, #b5c8e8);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
 }
 
 .hamburger {
@@ -46,12 +68,17 @@
 .hamburger span {
   display: block;
   width: 25px;
-  height: 3px;
-  background-color: var(--color-text);
+  height: 2.5px;
+  background: linear-gradient(90deg, #7c5cbf, #4a86c8);
   border-radius: 3px;
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -60,13 +87,15 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 64px;
     left: 0;
     right: 0;
-    background-color: var(--color-primary);
-    padding: 1rem 2rem;
-    gap: 1rem;
-    z-index: 99;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+    border-bottom: 1px solid rgba(201, 184, 232, 0.35);
   }
 
   .navOpen {

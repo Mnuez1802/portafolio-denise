@@ -1,0 +1,296 @@
+/* ── Login ── */
+.loginWrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #c9b8e8, #b5c8e8, #e8d5f5, #E8E4F5);
+  background-size: 400% 400%;
+  animation: gradientBreath 10s ease infinite;
+}
+
+.loginBox {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 60px rgba(91, 67, 150, 0.2);
+}
+
+.loginTitle {
+  font-family: var(--font-subtitle);
+  font-size: 1.6rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.loginSub {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  opacity: 0.6;
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+.loginInput {
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.loginInput:focus { border-color: var(--color-secondary); }
+.loginInputError { border-color: #e55 !important; }
+
+.loginError {
+  font-size: 0.85rem;
+  color: #e55;
+  text-align: center;
+}
+
+.loginBtn {
+  padding: 0.8rem;
+  background: var(--color-secondary);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.loginBtn:hover { opacity: 0.85; }
+
+/* ── Admin layout ── */
+.adminWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  font-family: var(--font-body);
+}
+
+.adminHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--color-text);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.adminLogo {
+  font-family: var(--font-subtitle);
+  font-size: 1.1rem;
+}
+
+.adminHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.savedBadge {
+  background: #25a560;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+.resetBtn:hover { background: rgba(255,255,255,0.1); }
+
+.viewSiteBtn {
+  background: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+.viewSiteBtn:hover { opacity: 0.85; }
+
+/* ── Body ── */
+.adminBody {
+  display: flex;
+  flex: 1;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #e8e4f5;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  gap: 0.3rem;
+}
+
+.sidebarItem {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  border-radius: 0 25px 25px 0;
+  margin-right: 1rem;
+  transition: background 0.2s;
+}
+.sidebarItem:hover { background: var(--color-accent); }
+.sidebarActive { background: var(--color-secondary) !important; color: #fff; font-weight: 600; }
+
+/* ── Content ── */
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  max-width: 800px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-subtitle);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.2rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input, .textarea, .select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.input:focus, .textarea:focus, .select:focus {
+  border-color: var(--color-secondary);
+}
+.textarea { resize: vertical; }
+
+.saveBtn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--color-secondary);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.saveBtn:hover { opacity: 0.85; transform: translateY(-2px); }
+
+.addBtn {
+  align-self: flex-start;
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 2px dashed var(--color-secondary);
+  color: var(--color-secondary);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
+}
+.addBtn:hover { background: var(--color-accent); }
+
+.card {
+  background: #fff;
+  border: 1px solid #e8e4f5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardNum {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.removeBtn {
+  background: transparent;
+  border: 1px solid #ffaaaa;
+  color: #cc4444;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.removeBtn:hover { background: #fff0f0; }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .adminBody { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; padding: 0.5rem; border-right: none; border-bottom: 1px solid #e8e4f5; }
+  .sidebarItem { border-radius: 25px; margin-right: 0; font-size: 0.85rem; padding: 0.5rem 1rem; }
+  .content { padding: 1.2rem; }
+}
